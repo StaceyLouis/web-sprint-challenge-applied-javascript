@@ -41,19 +41,19 @@ axios
 
  cardInfo.forEach(cardFunction(res));
  */
-res.data.articles.javascript.forEach(element => {
+Object.keys(res.data.articles).javascript.forEach(element => {
   containerCards.appendChild(cardFunction(element))
 });
-res.data.articles.bootstrap.forEach(element => {
+Object.keys(res.data.articles.bootstrap).forEach(element => {
+   containerCards.appendChild(cardFunction(element))
+});
+Object.keys(res.data.articles.node).forEach(element => {
   containerCards.appendChild(cardFunction(element))
 });
-res.data.articles.node.forEach(element => {
+Object.keys(res.data.articles.jquery).forEach(element => {
   containerCards.appendChild(cardFunction(element))
 });
-res.data.articles.jquery.forEach(element => {
-  containerCards.appendChild(cardFunction(element))
-});
-res.data.articles.technology.forEach(element => {
+Object.keys(res.data.articles.technology).forEach(element => {
   containerCards.appendChild(cardFunction(element))
 });
 
