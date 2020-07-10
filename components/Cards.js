@@ -27,11 +27,36 @@ axios
 .get(articles)
 .then(res => { 
  console.log(res)
- let cardInfo = res.data.articles.javascript;
+ /*
+ let javaInfo = res.data.articles.javascript;
+ console.log(javaInfo);
+ let bootInfo = res.data.articles.bootstrap;
+ console.log(bootInfo);
+ let queryInfo = res.data.articles.jquery;
+ console.log(queryInfo);
+ let nodeInfo= res.data.articles.node;
+ let techInfo =res.data.articles.technology;
+ let cardInfo = {javaInfo, bootInfo, queryInfo, nodeInfo, techInfo};
+ console.log(cardInfo);
 
- cardInfo.forEach(element => {
-  containerCards.appendChild(cardFunction(element));
- });
+ cardInfo.forEach(cardFunction(res));
+ */
+res.data.articles.javascript.forEach(element => {
+  containerCards.appendChild(cardFunction(element))
+});
+res.data.articles.bootstrap.forEach(element => {
+  containerCards.appendChild(cardFunction(element))
+});
+res.data.articles.node.forEach(element => {
+  containerCards.appendChild(cardFunction(element))
+});
+res.data.articles.jquery.forEach(element => {
+  containerCards.appendChild(cardFunction(element))
+});
+res.data.articles.technology.forEach(element => {
+  containerCards.appendChild(cardFunction(element))
+});
+
   
 })
 .catch( err => {
@@ -72,3 +97,5 @@ function cardFunction (arg){
 
 return cardDiv;
 }
+
+
