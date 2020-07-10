@@ -41,7 +41,7 @@ axios
 
  cardInfo.forEach(cardFunction(res));
  */
-Object.keys(res.data.articles).javascript.forEach(element => {
+res.data.articles.javascript.forEach(element => {
   containerCards.appendChild(cardFunction(element))
 });
 Object.keys(res.data.articles.bootstrap).forEach(element => {
