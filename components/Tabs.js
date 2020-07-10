@@ -17,20 +17,18 @@ axios
 .get(address)
 .then(res => { 
   console.log(res)
-    
-  parent.forEach(menuList(res));
+  let tabs = res.data.topics;
+  tabs.forEach(title => {
+    const tab = document.createElement('div')
+    tab.classList.add('tab');
+    tab.textContent = title;
+
+    return parent.appendChild(tab)
+})   
+ 
 
 })
 .catch( err => {
   console.log(err)
 });
 
-let menuList = (e) => {
-    let div = document.createElement('div');
-    div.classList.add('tab');
-    div.textContent = e.data.topics;
-    parent.appendChild(div);
-    return div;
-  }
-
-console.log(parent);

@@ -26,8 +26,13 @@ let containerCards = document.querySelector('.cards-container');
 axios
 .get(articles)
 .then(res => { 
+ console.log(res)
+ let cardInfo = res.data.articles.javascript;
 
-  containerCards.appendChild(cardFunction(res));
+ cardInfo.forEach(element => {
+  containerCards.appendChild(cardFunction(element));
+ });
+  
 })
 .catch( err => {
   console.log(err)
@@ -41,7 +46,7 @@ function cardFunction (arg){
     let img = document.createElement('img');
     let span = document.createElement('span');
 
-    img.setAttribute('src', arg.data.articles.authorPhoto);
+    img.setAttribute('src', arg.authorPhoto);
     
     
     cardDiv.classList.add("card");
@@ -50,8 +55,8 @@ function cardFunction (arg){
     imgContainer.classList.add('img-container');
 
 
-    headlineAr.textContent = arg.data.articles.headline;
-    span.textContent = arg.data.articles.authorName;
+    headlineAr.textContent = arg.headline;
+    span.textContent = arg.authorName;
 
    imgContainer.appendChild(img);
    author.appendChild(imgContainer);

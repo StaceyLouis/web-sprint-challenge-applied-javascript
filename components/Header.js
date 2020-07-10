@@ -26,7 +26,7 @@ function Header() {
 
     let tempSpan = document.createElement('span');
     tempSpan.classList.add('temp');
-    tempSpan.textContent="98";
+    tempSpan.textContent= '98';
 
     headerDiv.appendChild(dateSpan);
     headerDiv.appendChild(tempSpan);
